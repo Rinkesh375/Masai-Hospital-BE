@@ -17,12 +17,12 @@ app.use("/", doctorRoute);
 
 
 
-app.listen(process.env.PORT , async() => {
+app.listen(process.env.PORT || 3000 , async() => {
    try{
 
     await connection;
     console.log("Connected to the DB");
-    console.log(`Running at 3000 port`);
+    console.log(`Running at ${process.env.PORT} port`);
 
    }catch(err){
     console.log(err);
